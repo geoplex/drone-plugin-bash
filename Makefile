@@ -9,3 +9,11 @@ push: $(BIN)
 
 $(BIN): $(wildcard *.go)
 	GOOS=linux GOARCH=amd64 go build
+
+# additional flavors
+
+docker-%: Dockerfile %/Dockerfile
+	docker build --rm=true -t $(IMG)-$* ./$*
+
+push-%: Dockerfile %/Dockerfile
+	docker push $(IMG)-$*
