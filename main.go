@@ -59,7 +59,7 @@ func main() {
 	cmd.Stderr = os.Stderr
 	cmd.Env = append(os.Environ(), vargs.Env...)
 
-	fmt.Println("$", c, scriptName)
+	fmt.Println("$", strings.Join(cmd.Args, " "))
 	if err := cmd.Run(); err != nil {
 		log.Fatal(err)
 	}
