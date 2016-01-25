@@ -1,4 +1,4 @@
-FROM crhym3/drone-plugin-bash
+FROM geoplex/drone-plugin-bash
 
 # gpg keys listed at https://github.com/nodejs/node
 RUN set -ex && \

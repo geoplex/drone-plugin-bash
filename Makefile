@@ -1,5 +1,5 @@
 BIN := drone-plugin-bash
-IMG := crhym3/$(BIN)
+IMG := geoplex/$(BIN)
 
 docker: $(BIN) Dockerfile
 	docker build --rm=true -t $(IMG) .
